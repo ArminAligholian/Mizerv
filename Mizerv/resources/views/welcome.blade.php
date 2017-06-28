@@ -79,7 +79,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
+<<<<<<< HEAD
                     Mizerv changed by mohsen vala's laptop
+=======
+                    Mizerve for mohsen
+>>>>>>> mohsen
                 </div>
 
                 <div class="links">
