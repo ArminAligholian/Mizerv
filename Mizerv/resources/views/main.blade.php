@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     @include('partials._header')
-    @include('partials._navigation')
+    @include('partials.navigation._navigation')
     @yield('title')
   </head>
   <body>

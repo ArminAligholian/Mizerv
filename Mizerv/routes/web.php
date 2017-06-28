@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('homepage.DefualtHome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'PageController@getindex')->name('home');

@@ -177,8 +177,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-/*  shamsi calendar provider    */
-    Morilog\Jalali\JalaliServiceProvider::class,
+        /*  shamsi calendar provider    */
+        Morilog\Jalali\JalaliServiceProvider::class,
 
     ],
 
