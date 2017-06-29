@@ -34,7 +34,7 @@
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="15">
 
 <div class="container-fluid" style="background-color:crimson;;color:white;">
-    @include('partials._messages')
+
         <div>
             <h2>User info</h2>
         </div>
@@ -48,6 +48,7 @@
             </div>
 </div>
 <br>
+@include('partials._messages')
 
 <div class="container">
     <div class="row">
