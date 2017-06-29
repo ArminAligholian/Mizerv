@@ -57,7 +57,7 @@
                                          </div>
 
                                          <!--profile link-->
-                                         <li><a href="{{route('myprofile')}}">My Profile</a></li>
+                                         <li><a href="{{route('users.show',Auth::user()->id)}}">My Profile</a></li>
 
                                          <li class="divider"></li>
 

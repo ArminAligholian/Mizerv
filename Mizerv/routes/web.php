@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,11 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('homepage.DefualtHome');
-});
+/* routes for pages*/
+\Illuminate\Support\Facades\Route::get('/','PageController@gethome');
+\Illuminate\Support\Facades\Route::get('/home', 'PageController@getindex')->name('home');
+\Illuminate\Support\Facades\Route::get('/myprofile','PageController@getprofile')->name('myprofile');
 
-Auth::routes();
+/* routes for authentication */
+\Illuminate\Support\Facades\Auth::routes();
 
-Route::get('/home', 'PageController@getindex')->name('home');
-Route::get('/myprofile','PageController@getprofile')->name('myprofile');
+/* routes for profile edit*/
+\Illuminate\Support\Facades\Route::resource('users','ProfileController');
+
+
+

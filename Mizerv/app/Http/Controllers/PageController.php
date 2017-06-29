@@ -15,4 +15,9 @@ class PageController extends Controller
     {
         return view("myprofile.myprofiletest");
     }
+
+    public function gethome()
+    {
+        return view('homepage.DefualtHome');
+    }
 }
