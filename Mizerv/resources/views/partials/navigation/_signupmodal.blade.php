@@ -1,5 +1,5 @@
 <div class="modal fade" id="signupmodal" role="dialog">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
                 <!---close icon-------------------------------------------------->
@@ -68,7 +68,7 @@
 
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary btn-block">
                                 Register
                             </button>
                         </div>
@@ -78,7 +78,7 @@
 
             <div class="modal-footer">
                 <!--sign in with Google +   ----------------------->
-                <button type="button" class="btn btn-danger">Google</button>
+                <button type="button" class="btn btn-danger btn-block">Google</button>
 
             </div>
         </div>

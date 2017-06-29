@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProfileController extends Controller
 {
@@ -61,7 +62,8 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user=User::find($id);
+        return view('users.edit')->withUser($user);
     }
 
     /**
@@ -73,7 +75,21 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user=User::find($id);
+
+        $this->validate($request,array(
+           'name'=>'required|max:100',
+            'email'=>'required|email'
+        ));
+
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->save();
+
+        // set flash data with success message
+        Session::flash('success', 'This user was successfully changed.');
+        // redirect with flash data to posts.show
+        return redirect()->route('users.show', $user->id);
     }
 
     /**

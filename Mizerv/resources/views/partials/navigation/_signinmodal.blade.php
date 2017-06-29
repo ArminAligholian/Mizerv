@@ -1,5 +1,5 @@
 <div class="modal fade" id="signinmodal" role="dialog">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
 
@@ -72,7 +72,7 @@
             <div class="modal-footer">
 
                 <!--sign in with Google +   ----------------------->
-                <button type="button" class="btn btn-danger">Google</button>
+                <button type="button" class="btn btn-danger btn-block">Google</button>
 
             </div>
         </div>

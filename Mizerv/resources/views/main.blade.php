@@ -8,6 +8,7 @@
   <body>
       <div class="container">
           <hr>
+          @include('partials._messages')
           @yield('content')
           <hr>
           @include('partials._footer')
