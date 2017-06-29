@@ -8,13 +8,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
+
+        .affix {
+            top: 25px;
+            width: 250px;
+            -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+            background-color: crimson;
+            border-color: crimson;
+        }
+
+        .affix a {
+            color: #fff !important;
+            padding: 15px !important;
+            -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+        }
+
+        .affix-top a {
+            padding: 25px !important;
+        }
         body {
             background-color: whitesmoke;
             position: relative;
         }
-        .affix {
-            top: 20px;
-        }
+
         div.col-sm-9 div {
 
         }
@@ -39,12 +57,12 @@
             <h2>User info</h2>
         </div>
             <div class="col-sm-2">
-                <strong>Name:</strong>
-                <p>{{$user->name}}</p>
+                <strong style="font-size: large">Name:</strong>
+                <p style="font-family: monospace; font-size: large">{{$user->name}}</p>
             </div>
             <div class="col-sm-2 col-sm-offset-1">
-                <strong>Email:</strong>
-                <p>{{$user->email}}</p>
+                <strong style="font-size: large">Email:</strong>
+                <p style="font-family: monospace; font-size: large">{{$user->email}}</p>
             </div>
 </div>
 <br>
