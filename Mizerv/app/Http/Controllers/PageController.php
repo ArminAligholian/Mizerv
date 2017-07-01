@@ -15,6 +15,10 @@ class PageController extends Controller
     {
         return view("myprofile.myprofiletest");
     }
+    public function gettest()
+    {
+        return view("myprofile.test");
+    }
 
     public function gethome()
     {
