@@ -163,6 +163,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Mews\Purifier\PurifierServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -232,6 +234,9 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         /*shamsi calendar aliases*/
         'jDate' => Morilog\Jalali\Facades\jDate::class,
+        'Purifier' => Mews\Purifier\Facades\Purifier::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+
     ],
 
 ];
