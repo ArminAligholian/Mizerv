@@ -1,8 +1,5 @@
 @extends('main')
 
-@section('title', '| Create New Restaurant')
-
-
 @section('content')
 
     <div class="row">
@@ -44,5 +41,3 @@
     </div>
 
 @endsection
-
-
