@@ -22,5 +22,11 @@ use Illuminate\Support\Facades\Route;
 /* routes for profile edit*/
 \Illuminate\Support\Facades\Route::resource('users','ProfileController');
 
+/* routes for restaurants edit*/
+\Illuminate\Support\Facades\Route::resource('restaurants','RestaurantsController');
+
+/* routes for profile edit*/
+\Illuminate\Support\Facades\Route::resource('categories','CategoriesController');
+
 
 
