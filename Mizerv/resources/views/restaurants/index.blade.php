@@ -3,12 +3,12 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-9">
             <h1>All Restaurants</h1>
         </div>
 
-        <div class="col-md-2">
-            <a href="{{route('restaurants.create')}}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create New Restaurants</a>
+        <div class="col-md-3">
+            <a href="{{route('restaurants.create')}}" class="btn btn-lg btn-block btn-primary">Create New Restaurants</a>
         </div>
         <div class="col-md-12">
             <hr>

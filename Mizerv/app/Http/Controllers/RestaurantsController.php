@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Area;
 use App\Restaurant;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
@@ -31,7 +32,8 @@ class RestaurantsController extends Controller
      */
     public function create()
     {
-        return view('restaurants.create');
+        $areas=Area::all();
+        return view('restaurants.create')->withAreas($areas);
     }
 
     /**
@@ -66,12 +68,14 @@ class RestaurantsController extends Controller
             $image    = $request->file('profile_image');
             $filename = time() . '.' .$image->getClientOriginalExtension();
             $location = public_path('images/'.$filename);
-            Image::make($image)->resize(80,80)->save($location);
+            Image::make($image)->resize(400,400)->save($location);
 
             $restaurant->profile_image = $filename;
         }
 
         $restaurant->save();
+        $restaurant->areas()->sync($request->areas, false);
+
         Session::flash('success', 'The restaurant  was successfully save!');
         return redirect()->route('restaurants.show', $restaurant->id);
 

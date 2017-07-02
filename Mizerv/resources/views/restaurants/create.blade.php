@@ -1,5 +1,24 @@
 @extends('main')
 
+<<<<<<< HEAD
+=======
+
+@section('stylesheets')
+
+    {!! Html::style('css/parsley.css') !!}
+    {!! Html::style('css/select2.min.css') !!}
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({
+            selector:'textarea',
+            plugins: "lists",
+            plugins:"link",
+            menubar:false
+        });
+    </script>
+
+@endsection
+
+>>>>>>> 719988a9603130c155907085548a2978cdddbcf1
 @section('content')
 
     <div class="row">
@@ -24,6 +43,13 @@
             {{ Form::label('location', 'Location:')}}
             {{ Form::text('location', null, array('class' => 'form-control', 'required' => '') )}}
 
+            {{Form::label('areas','Areas:')}}
+            <select class="form-control select2-multi" name="areas[]" multiple="multiple">
+                @foreach($areas as $area)
+                    <option value='{{ $area->id }}'>{{ $area->name }}</option>
+                @endforeach
+            </select>
+
             {{Form::label('profile_image',"Upload profile image:")}}
             {{Form::file('profile_image')}}
 
@@ -41,3 +67,18 @@
     </div>
 
 @endsection
+<<<<<<< HEAD
+=======
+
+@section('scripts')
+
+    {!! Html::script('js/parsley.min.js') !!}
+    {!! Html::script('js/select2.min.js') !!}
+
+    <script type="text/javascript">
+        $('.select2-multi').select2();
+    </script>
+
+@endsection
+
+>>>>>>> 719988a9603130c155907085548a2978cdddbcf1
