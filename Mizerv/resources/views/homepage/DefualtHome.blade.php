@@ -6,18 +6,33 @@
   @include('partials._searchbar')
 
   <br>
-    <a href="{{route('restaurants.index')}}" class="btn btn-danger col-md-offset-4">Restaurants</a>
-  <a href="{{route('areas.index')}}" class="btn btn-danger col-md-offset-4">Areas</a>
   <br>
   <hr>
 
-    <div class="row">
+  <div class="row" style="background-color: whitesmoke">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-6">
+        <a href="{{route('restaurants.index')}}" class="btn btn-default  btn-block ">Restaurants</a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="{{route('areas.index')}}" class="btn btn-default  btn-block ">Areas</a>
+      </div>
+
+      <br>
+    </div>
+  </div>
+  <hr>
+
+
+    <div class="row" style="background-color: whitesmoke">
       <div class="col-md-8 col-md-offset-2">
+        <br>
         @foreach($areas as $area)
           <div class="col-md-6">
             <div class="panel">
               <div class="panel-body">
-                <a href="{{route('areas.show',$area->id)}}" class="btn btn-danger btn-block">{{$area->name}}</a>
+                <a  href="{{route('areas.show',$area->id)}}" class="btn btn-danger btn-block">{{$area->name}}</a>
               </div>
             </div>
 
