@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Area;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function getindex()
     {
-        return view("homepage.DefualtHome");
+        $areas=Area::all();
+        return view("homepage.DefualtHome")->withAreas($areas);
     }
 
     public function getprofile()
@@ -18,6 +20,7 @@ class PageController extends Controller
 
     public function gethome()
     {
-        return view('homepage.DefualtHome');
+        $areas=Area::all();
+        return view('homepage.DefualtHome')->withAreas($areas);
     }
 }

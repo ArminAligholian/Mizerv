@@ -19,14 +19,17 @@ use Illuminate\Support\Facades\Route;
 /* routes for authentication */
 \Illuminate\Support\Facades\Auth::routes();
 
-/* routes for profile edit*/
+/* routes for profile */
 \Illuminate\Support\Facades\Route::resource('users','ProfileController');
 
-/* routes for restaurants edit*/
+/* routes for restaurants */
 \Illuminate\Support\Facades\Route::resource('restaurants','RestaurantsController');
 
-/* routes for profile edit*/
+/* routes for Categories  */
 \Illuminate\Support\Facades\Route::resource('categories','CategoriesController');
+
+/* routes for areas */
+\Illuminate\Support\Facades\Route::resource('areas','AreaController');
 
 
 

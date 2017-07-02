@@ -21,6 +21,11 @@
             <p class="lead"> {{ $restaurant->description }}</p>
             <hr>
 
+            <p class="lead">
+                @foreach($restaurant->areas as $area)
+                    <span class="label label-default">{{ $area->name }}</span>
+                @endforeach
+            </p>
             <hr>
 
             </div>
