@@ -21,14 +21,35 @@
             <p class="lead"> {{ $restaurant->description }}</p>
             <hr>
 
-            <p class="lead">
-                @foreach($restaurant->areas as $area)
-                    <span class="label label-default">{{ $area->name }}</span>
-                @endforeach
-            </p>
-            <hr>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="col-md-4">
+                            <strong>Areas</strong>
+                            <p class="lead">
+                                @foreach($restaurant->areas as $area)
+                                    <span class="label label-default">{{ $area->name }}</span>
+                                @endforeach
+                            </p>
+                            <hr>
 
+                        </div>
+
+                        <div class="col-md-4">
+                            <strong>Categories</strong>
+                            <p class="lead">
+                                @foreach($restaurant->categories as $category)
+                                    <span class="label label-default">{{ $category->name }}</span>
+                                @endforeach
+                            </p>
+                            <hr>
+
+                        </div>
+                    </div>
+                </div>
             </div>
+
+        <div class="col-md-3">
+            <a class="btn btn-danger btn-block" href="{{route('restaurants.index')}}">all restaurants</a>
         </div>
     </div>
 

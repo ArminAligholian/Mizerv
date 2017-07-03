@@ -1,5 +1,5 @@
 
-<img id="homepagetest" src="{{ URL::asset('images/homepagetest.jpg') }}" >
+<!-- <img id="homepagetest" src="{{ URL::asset('images/homepagetest.jpg') }}" > -->
 <!-- search box partial-->
   <div id="SearchBar" class="row" method="get">
 

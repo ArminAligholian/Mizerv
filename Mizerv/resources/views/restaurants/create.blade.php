@@ -5,14 +5,7 @@
 
     {!! Html::style('css/parsley.css') !!}
     {!! Html::style('css/select2.min.css') !!}
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({
-            selector:'textarea',
-            plugins: "lists",
-            plugins:"link",
-            menubar:false
-        });
-    </script>
+
 
 @endsection
 
@@ -40,6 +33,17 @@
 
             {{ Form::label('location', 'Location:')}}
             {{ Form::text('location', null, array('class' => 'form-control', 'required' => '') )}}
+
+           {{Form::label('categories','Categories:')}}
+
+
+            <!-- these brackets below "near categories and areas in the select name" both are for selecting more than one of them
+            that means with these brackets you can choose number of them-->
+            <select class="form-control select2-multi" name="categories[]" multiple="multiple">
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
 
             {{Form::label('areas','Areas:')}}
             <select class="form-control select2-multi" name="areas[]" multiple="multiple">
