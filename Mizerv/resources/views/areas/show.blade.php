@@ -24,8 +24,8 @@
                 <tbody>
                 @foreach($area->restaurants as $restaurant)
                     <tr>
-                        <th>{{$restaurant->id}}</th>
-                        <td>{{$restaurant->name}}</td>
+                        <td>{{$restaurant->id}}</td>
+                        <th><span style="font-size:20px;">{{$restaurant->name}}</span></th>
                         <td>@foreach($restaurant->areas as $area)
                                 <span class="label label-danger">{{$area->name}}</span>
                             @endforeach

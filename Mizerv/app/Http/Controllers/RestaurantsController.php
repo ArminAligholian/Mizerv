@@ -51,7 +51,7 @@ class RestaurantsController extends Controller
             'address'      => 'required|max:255',
             'location'     => 'required|max:255',
             'profile-image'=> 'sometimes|image',
-            'description'  => 'required|max:500'
+            'description'  => 'required|max:1000'
         ));
         // store in the database
         $restaurant = new Restaurant();

@@ -1,7 +1,5 @@
 @extends('main')
 
-<<<<<<< HEAD
-=======
 
 @section('stylesheets')
 
@@ -18,7 +16,7 @@
 
 @endsection
 
->>>>>>> 719988a9603130c155907085548a2978cdddbcf1
+
 @section('content')
 
     <div class="row">
@@ -67,8 +65,7 @@
     </div>
 
 @endsection
-<<<<<<< HEAD
-=======
+
 
 @section('scripts')
 
@@ -80,5 +77,3 @@
     </script>
 
 @endsection
-
->>>>>>> 719988a9603130c155907085548a2978cdddbcf1
