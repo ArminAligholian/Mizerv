@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Area;
+use App\Category;
 use App\Restaurant;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
@@ -21,7 +22,7 @@ class RestaurantsController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::all();
+        $restaurants = Restaurant::orderBy('id','desc')->paginate(6);
         return view('restaurants.index')->withRestaurants($restaurants);
     }
 
@@ -32,8 +33,9 @@ class RestaurantsController extends Controller
      */
     public function create()
     {
+        $categories=Category::all();
         $areas=Area::all();
-        return view('restaurants.create')->withAreas($areas);
+        return view('restaurants.create')->withAreas($areas)->withCategories($categories);
     }
 
     /**
@@ -75,6 +77,7 @@ class RestaurantsController extends Controller
 
         $restaurant->save();
         $restaurant->areas()->sync($request->areas, false);
+        $restaurant->categories()->sync($request->categories, false);
 
         Session::flash('success', 'The restaurant  was successfully save!');
         return redirect()->route('restaurants.show', $restaurant->id);

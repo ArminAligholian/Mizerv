@@ -39,7 +39,11 @@
                 @endforeach
                 </tbody>
             </table>
+            <div class="text-center">
+                {{$restaurants->links()}}
+            </div>
         </div>
     </div>
+
 
 @endsection

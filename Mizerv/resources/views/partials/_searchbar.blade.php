@@ -1,6 +1,15 @@
 
-<!--<img id="homepagetest" src="{{ URL::asset('images/homepagetest.jpg') }}" >-->
+<style>
+#SearchBar{
+  background: #homepagetest;
+}
+
+</style>
+
+<img id="homepagetest" src="{{ URL::asset('images/homepage test2.jpg') }}" style="width:100%;" >
+
 <!-- search box partial-->
+
   <div id="SearchBar" class="row" method="get">
 
       <div class="col-md-offset-1 col-md-2">

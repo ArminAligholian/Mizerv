@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CategoriesController extends Controller
 {
@@ -13,7 +15,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories=Category::all();
+        return view('categories.index')->withCategories($categories);
     }
 
     /**
@@ -23,7 +26,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -34,7 +37,17 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,array(
+            'name'=>'required|max:255'
+        ));
+
+        $category=new Category();
+        $category->name = $request->name;
+
+        $category->save();
+
+        Session::flash('success','The category has been added successfully!');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -45,7 +58,8 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $category=Category::find($id);
+        return view('categories.show')->withCategory($category);
     }
 
     /**
