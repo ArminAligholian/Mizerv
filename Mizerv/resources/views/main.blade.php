@@ -6,14 +6,14 @@
     @yield('title')
   </head>
   <body>
-      <div class="container">
-          <hr>
-          @include('partials._messages')
-          @yield('content')
-          <hr>
-          @include('partials._footer')
+    <hr>
 
-      </div>
+
+        @include('partials._messages')
+        @yield('content')
+              <hr>
+        @include('partials._footer')
+
 
     @include('partials._javascripts')
 
