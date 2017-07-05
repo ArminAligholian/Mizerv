@@ -32,7 +32,12 @@
       <div class="col-md-8 col-md-offset-2">
         <br>
 
+        @if($areas->name = 'Fereshte')
+          <p>say hi</p>
+        @endif
+
         @foreach($areas as $area)
+
           @if ($area->name === "Fereshte")
 
 
