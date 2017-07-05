@@ -33,7 +33,7 @@
         <br>
 
         @if($areas->name = 'Fereshte')
-          <p>say hi</p>
+          <p>{{$areas->name}}</p>
         @endif
 
         @foreach($areas as $area)
