@@ -4,20 +4,29 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-5 col-md-offset-1">
 
             <img src="{{asset('images/'.$restaurant->profile_image)}}" alt="">
-            <h1>{{ $restaurant->name }}</h1>
+            <br>
+            <br>
+            <strong>Name</strong>
+            <h2>{{ $restaurant->name }}</h2>
 
-
+            <strong>Phone</strong>
             <p class="lead"> {{ $restaurant->phone }}</p>
             <hr>
+            <strong>Address</strong>
             <p class="lead"> {{ $restaurant->address }}</p>
-            <hr>
+
+            <strong>Location</strong>
             <p class="lead"> {{ $restaurant->location }}</p>
             <hr>
+
+            <strong>Capacity</strong>
             <p class="lead"> {{ $restaurant->capacity }}</p>
             <hr>
+
+            <strong>Description</strong>
             <p class="lead"> {{ $restaurant->description }}</p>
             <hr>
 
@@ -47,7 +56,8 @@
                     </div>
                 </div>
             </div>
-
+        <br>
+        <br>
         <div class="col-md-3">
             <a class="btn btn-danger btn-block" href="{{route('restaurants.index')}}">all restaurants</a>
         </div>

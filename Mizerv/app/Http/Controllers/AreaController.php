@@ -75,7 +75,8 @@ class AreaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $area = Area::find($id);
+        return view('areas.edit')->withArea($area);
     }
 
     /**
@@ -87,7 +88,16 @@ class AreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,array(
+           'name' => 'required|max:255'
+        ));
+
+        $area=Area::find($id);
+        $area->name = $request->name;
+        $area->save();
+
+        Session::flash('success','Area has been changed successfully');
+        return redirect()->route('areas.index');
     }
 
     /**
@@ -98,6 +108,13 @@ class AreaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $area = Area::find($id);
+        $area->restaurants()->detach();
+
+        $area->delete();
+
+
+        Session::flash('success', 'The area was successfully deleted.');
+        return redirect()->route('areas.index');
     }
 }
