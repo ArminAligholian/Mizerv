@@ -3,19 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Area;
+use App\Restaurant;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function getindex()
     {
+
         $areas=Area::all();
         return view("homepage.DefualtHome")->withAreas($areas);
     }
 
     public function getprofile()
     {
-        return view("myprofile.myprofiletest");
+        $restaurants=Restaurant::all();
+        return view("myprofile.myprofiletest")->withRestaurants($restaurants);
     }
     public function gettest()
     {

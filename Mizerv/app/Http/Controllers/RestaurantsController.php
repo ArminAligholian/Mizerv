@@ -49,9 +49,10 @@ class RestaurantsController extends Controller
         // validate the data
         $this->validate($request, array(
             'name'         => 'required|max:255',
-            'phone'        => 'required|integer',
+            'phone'        => 'required|regex:/(09)[0-9]{9}/',
             'address'      => 'required|max:255',
-            'location'     => 'required|max:255',
+            'lat'          => 'required',
+            'lng'          => 'required',
             'profile-image'=> 'sometimes|image',
             'description'  => 'required|max:1000'
         ));
@@ -60,7 +61,16 @@ class RestaurantsController extends Controller
         $restaurant->name = $request->name;
         $restaurant->phone = $request->phone;
         $restaurant->address = $request->address;
-        $restaurant->location = $request->location;
+        $restaurant->lat=$request->lat;
+        $restaurant->lng=$request->lng;
+        $restaurant->instagram=$request->instagram;
+        $restaurant->telegram=$request->telegram;
+        $restaurant->website=$request->website;
+
+        $restaurant->sigar=$request->sigar;
+        $restaurant->parking=$request->parking;
+        $restaurant->expensive_grade=$request->expensive_grade;
+
         $restaurant->capacity = $request->capacity;
         $restaurant->description= Purifier::clean($request->description);
 
@@ -93,7 +103,7 @@ class RestaurantsController extends Controller
     public function show($id)
     {
         $restaurant=Restaurant::find($id);
-        return view('restaurants.show')->withRestaurant($restaurant);
+        return view('restaurants.show',compact('restaurant'))->withRestaurant($restaurant);
     }
 
     /**

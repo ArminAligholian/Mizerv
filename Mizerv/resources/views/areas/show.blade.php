@@ -2,6 +2,7 @@
 
 @section('content')
 
+    {!! Html::style('css/googlemaps.css') !!}
     <div class="row">
         <div class="col-md-8">
             <h1>{{$area->name}} Area <small>{{$area->restaurants()->count()}} Restaurants</small></h1>
@@ -38,5 +39,12 @@
             </table>
         </div>
     </div>
+    <div id="map"></div>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRSptT0JU3Yp1DdTlCc5SqtlbxB-Gyflc&callback=initMap">
+    </script>
+    <script src="../../../public/js/googlemaps.js"></script>
+    {{Html::script('js/googlemaps.js')}}
 
 @endsection

@@ -5,8 +5,9 @@
 }
 
 </style>
-
+{{--
 <img id="homepagetest" src="{{ URL::asset('images/homepage test2.jpg') }}" style="width:100%;" >
+--}}
 
 <!-- search box partial-->
 
